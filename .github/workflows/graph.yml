@@ -13,10 +13,12 @@ jobs:
       contents: write
     runs-on: ubuntu-latest
     steps:
-      - uses: abozanona/pacman-contribution-graph@main
+      - uses: Platane/snk@v3
         with:
           github_user_name: ${{ github.repository_owner }}
-          games: 'galaga'
+          outputs: |
+            dist/github-snake.svg
+            dist/github-snake-dark.svg?palette=github-dark
 
       - uses: crazy-max/ghaction-github-pages@v3.1.0
         with:
